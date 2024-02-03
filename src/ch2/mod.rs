@@ -1,2 +1,3 @@
-pub mod ex01;
-pub mod ex02;
+pub mod num_type;
+pub mod tuple;
+pub mod array;
