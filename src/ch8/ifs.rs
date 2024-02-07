@@ -76,3 +76,58 @@ fn match_test() {
     };
     println!("dd:{}", dd);
 }
+
+pub struct Stu {
+    name: String,
+    age: i32,
+}
+#[test]
+fn struct_test() {
+    let s = Stu {
+        name: "hello".to_string(),
+        age: 10,
+    };
+    let Stu { name, .. } = s;
+
+    println!("name:{}", name);
+}
+
+#[test]
+fn if_guard_test() {
+    let s = (1, 3);
+    match s {
+        (x, y) if x < y => println!("x:{},y:{}", x, y),
+        (x, y) if x + y == 4 => println!("x+y={}", x + y),
+        _ => println!("don't care"),
+    }
+}
+
+#[test]
+fn if_let_test() {
+    let s = Some(7);
+    if let Some(i) = s {
+        println!("i is {}", i);
+    }
+
+    let y: Option<i32> = None;
+    if let Some(j) = y {
+        println!("j is {}", j);
+    } else {
+        println!("j is None");
+    }
+}
+
+#[test]
+fn test_while_let() {
+    let mut s = Some(1);
+    //一定要Some在前
+    while let Some(mut i) = s {
+        println!("i is {}", i);
+        i = i + 1;
+        if i > 10 {
+            s = None;
+        } else {
+            s = Some(i);
+        }
+    }
+}
