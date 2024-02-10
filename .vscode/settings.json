@@ -1,4 +1,8 @@
 {
     "rust-analyzer.showUnlinkedFileNotification": false,
-    "rust-analyzer.rustfmt.rangeFormatting.enable": true
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
 }
